@@ -9,7 +9,7 @@ export default function SelectMenu(props) {
         if(selectedValue===value){
             setSelected(true)
         }
-    }, [value,defaultValue]);
+    }, [value,selectedValue]);
     return (
         <div className={`${className}${selected?'selected':''}`} onClick={()=>{handleSelect({value,label})}}>
             {label}

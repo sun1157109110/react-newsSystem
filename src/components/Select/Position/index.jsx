@@ -1,4 +1,6 @@
 import React from "react";
+import ReactDOM from 'react-dom';
+import { useEffect } from "react";
 import "./index.css";
 
 let instance = null;
@@ -15,13 +17,19 @@ export default function Position(props) {
   const setInstance = () => {
     const { left, top, height } = targetRef.current.getBoundingClientRect();
     const style = {
-      top: document.documentElement.scrollHeight + top + height + "px",
+      top: document.documentElement.scrollTop + top + height + "px",
       left: document.documentElement.scrollLeft + left + "px",
     };
     instance.style.top = style.top;
     instance.style.left = style.left;
     return {top,left,height}
   };
+  const handleScroll = ()=>{
+    let {top,height} = setInstance();
+    if(container.offsetTop-top>0||top+height-container.offsetTop>container.offsetHeight){
+      onNotVisibleArea()
+    }
+}
   useEffect(() => {
     instance && setInstance();
     if(container){
@@ -32,13 +40,8 @@ export default function Position(props) {
         container.removeEventListener('scroll',handleScroll,false)
       };
     }
-  }, []);
-  const handleScroll = ()=>{
-      let {top,height} = setInstance();
-      if(container.offsetTop-top>0||top+height-container.offsetTop>container.offsetHeight){
-        onNotVisibleArea()
-      }
-  }
+  }, [container,handleScroll,setInstance]);
+ 
   //将选择项添加到instance的最后面,渲染成react元素 之后render
-  return  instance&&ReactDom.createPortal(children,instance);
+  return  instance&&ReactDOM.createPortal(children,instance);
 }

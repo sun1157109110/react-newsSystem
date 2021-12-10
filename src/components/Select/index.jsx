@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import { useEffect } from 'react'
+import React, { useState ,useRef,useEffect} from 'react'
 import Position from './Position';
 
 export default function Select(props) {
@@ -22,7 +21,7 @@ export default function Select(props) {
     // 查找defaultValue对应的label并展示出来
     useEffect(() => {
         if(!isDefaultValue)return;
-        let index = props.children.findIndex((item)=>{item.props.value===defaultValue});
+        let index = props.children.findIndex((item)=>item.props.value===defaultValue);
         if(index>-1){
             setData(props.children[index].props);
             setIsDefaultValue(true);
@@ -47,7 +46,7 @@ export default function Select(props) {
            {
                visible?
                <Position onNotVisibleArea={() => setVisible(false)} targetRef = {inputRef} getContainer = {getContainer}>
-                   {React.children.map(props.children,child=>(
+                   {React.Children.map(props.children,child=>(
                        React.cloneElement(child,{handleSelect,selectedValue:data.value})
                    ))}
                </Position>:null
