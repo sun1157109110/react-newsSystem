@@ -15,6 +15,7 @@ const { confirm } = Modal;
                 list.forEach(element => {
                     if(element.children.length === 0) element.children = ''
                 });
+                console.log(list);
                 setDataSource(list)
             })
         }, [])   
@@ -78,6 +79,7 @@ const { confirm } = Modal;
                 setDataSource(dataSource.filter((data)=>item.id!==data.id))
                 axios.delete(`/rights/${item.id}`)
             }else{
+                //先找出是哪个权限的子权限
                 let list = dataSource.filter(data => data.id===item.rightId)
                 list[0].children = list[0].children.filter(data =>data.id !== item.id)
                 setDataSource([...dataSource]);

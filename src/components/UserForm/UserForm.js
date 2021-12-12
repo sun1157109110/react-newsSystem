@@ -23,6 +23,7 @@ const UserForm = forwardRef((props,ref)=>{
             if(roleId===1){
                 return false
             }else{
+                //只能添加本区域的
                 return region!==item.value
             }
         }

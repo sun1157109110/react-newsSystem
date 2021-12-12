@@ -143,7 +143,8 @@ const { confirm } = Modal;
         
         const handleUpdate = (item)=>{
             setTimeout(() => {
-                setIsUpdateVisible(true)
+                setIsUpdateVisible(true);
+                //设置默认值
                 updateForm.current.setFieldsValue(item)
                 if(item.roleId===1){
                     setIsUpdateDisabled(true)

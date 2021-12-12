@@ -10,7 +10,7 @@ import axios from 'axios';
         const [dataSource,setDataSource] = useState([])
         const {username} = JSON.parse(localStorage.getItem("token"));
         useEffect(() => {
-            //从后台获取数据
+            //从后台获取数据 _ne不等于
             axios.get(`/news?author=${username}&auditState_ne=0&publishState_lte=1&_expand=category`).then((res)=>{
                 const list = res.data
                 setDataSource(list)
