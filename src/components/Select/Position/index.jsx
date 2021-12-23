@@ -45,6 +45,7 @@ export default function Position(props) {
     if (container) {
       container.addEventListener("scroll", handleScroll, false);
     }
+    //页面卸载后清楚事件绑定
     return () => {
       if (container) {
         container.removeEventListener("scroll", handleScroll, false);
