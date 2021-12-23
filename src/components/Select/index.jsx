@@ -1,6 +1,11 @@
 import React, { useState ,useRef,useEffect} from 'react'
 import Position from './Position';
 
+/* 
+父级容器overflow: auto，Select组件位于较下方。
+父级容器overflow: hidden，Select组件位于较下方。
+父级容器的层级较低时，高层级元素与DropdownMenu位置重合。
+*/
 export default function Select(props) {
     const {getContainer,onChange,defaultValue} = props;
     //控制下拉框显示/隐藏

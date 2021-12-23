@@ -80,8 +80,8 @@ function NewsRouter(props) {
     
     return (
         //加载中组件
-        <Suspense fallback={ReactDOM.createPortal(<Spin size="large" style={{position:'absolute',top:'50%',left:'50%',translate:'-50%,-50%'}}></Spin>,document.body)}>
-        <Spin size="large" spinning={props.isSpinning}>
+        <Suspense fallback={ReactDOM.createPortal(<Spin size="large" style={{position:'fixed',top:'50%',left:'50%',transform:'translate(-50%,-50%)'}}></Spin>,document.body)}>
+        <Spin size="large" spinning={props.isSpinning}  style={{position:'fixed!important',top:'50%',left:'50%',transform:'translate(-50%,-50%)'}}>
         <Switch>
             {
                 BackRouteList.map( item =>{
