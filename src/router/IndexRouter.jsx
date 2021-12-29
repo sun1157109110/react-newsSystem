@@ -1,6 +1,8 @@
 import React, { lazy, Suspense } from "react";
 import { HashRouter, Redirect, Route, Switch } from "react-router-dom";
 import { Spin } from 'antd'
+import TagTest from "../views/TagTest";
+
 // import Detail from "../views/news/Detail/Detail";
 // import NewsList from "../views/news/NewsList/NewsList";
 // import NewsSandBox from "../views/sandbox/NewsSandBox";
@@ -21,6 +23,7 @@ export default function IndexRouter() {
           <Route path="/news" component={NewsList} />
           <Route path="/detail/:id" component={Detail} />
           <Route path="/select" component={SelectTest} />
+          <Route path="/tag" component={TagTest} />
           <Route
             path="/"
             render={() =>
