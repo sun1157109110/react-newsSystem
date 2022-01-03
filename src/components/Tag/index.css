@@ -10,13 +10,16 @@
   white-space: nowrap;
   background-color: #fafafa;
 }
+
 .tag.colorTag {
   border-color: transparent;
   color: #fff;
 }
+
 .tag.colorTag .closeBtn {
   color: rgba(255, 255, 255, 0.6);
 }
+
 .tag .closeBtn {
   margin-left: 5px;
   color: rgba(0, 0, 0, 0.45);
