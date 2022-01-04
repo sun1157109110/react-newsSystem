@@ -1,0 +1,28 @@
+npm i --save sass
+npm i --save axios
+npm i --save-dev http-proxy-middleware
+npm i --save antd
+npm i -g json-server
+
+npm i tsparticles (先安装这个)(粒子背景特效插件)
+npm install react-particles-js
+
+npm install --save nprogress (进度条插件)
+npm install --save react-draft-wysiwyg draft-js html-to-draftjs(富文本编辑器插件)
+npm i moment  (处理时间戳的库)
+
+npm i redux react-redux
+npm install redux-persist(状态持久化的库)
+npm install echarts --save(Apache ECharts)
+npm i --save lodash
+
+json-server --watch .\db.json --port 5000
+
+npm config get registry
+
+npm config set registry https://registry.npm.taobao.org
+
+--------------------------------------------------------------------
+npm i -g create-react-app
+
+存储在 C:\Users\GMX\AppData\Roaming\npm\create-react-app 
