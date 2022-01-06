@@ -44,7 +44,7 @@ export default function Progress(props) {
         barColor = '#666',
         isAutoDisappear = false,
         isHiddenText = false,//是否隐藏进度条文本
-        textColor = '#06f',
+        textColor = '#ccc',
         statusColor = [[30,'yellow'],[60,'blue'],[90,'red']]
         } = props
     return  percent ===100&&isAutoDisappear?null:

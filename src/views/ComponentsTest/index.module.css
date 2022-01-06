@@ -14,3 +14,16 @@
 .testWrap .btnTest .btn{
   margin-bottom: 8px;
 }
+.progressContainer{
+  position: relative;
+}
+.progressContainer::after{
+  content: 'Progress';
+  line-height: 30px;
+  font-size: 16px;
+  color: #1a1a1a;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}

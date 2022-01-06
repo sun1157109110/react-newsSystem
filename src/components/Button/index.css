@@ -29,6 +29,9 @@
   color: rgba(0, 0, 0, 0.65);
   background-color: #fff;
 }
+.btn.confirm{
+  background-color: #52c41a;
+}
 .btn.pure::after {
   background-image: radial-gradient(circle, #ccc 10%, transparent 11%);
 }
