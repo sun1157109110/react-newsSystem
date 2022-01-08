@@ -4,6 +4,7 @@ import Button from "../../components/Button";
 import Drawer from "../../components/Drawer";
 import Tag from "../../components/Tag";
 import Progress from "../../components/Progress";
+import Spin from "../../components/Spin";
 
 export default function ComponentsTest() {
   const [isDrawerVisible, setIsDrawerVisible] = useState(false);
@@ -31,20 +32,22 @@ export default function ComponentsTest() {
           danger&block
         </Button>
       </div>
-      <Button
-        type="confirm"
-        shape="circle"
-        block
-        className={styles.btn}
-        onClick={handleClick}
-      >
-        点击跳出抽屉
-      </Button>
-      {/* 抽屉 */}
-      <Drawer isVisible={isDrawerVisible} onClose={handleMask}>
-        <h4>这是一个抽屉</h4>
-      </Drawer>
-      <div className="tagContainer">
+      <div className={styles.drawerContainer}>
+        <Button
+          type="confirm"
+          shape="circle"
+          block
+          className={styles.btn}
+          onClick={handleClick}
+        >
+          点击跳出抽屉
+        </Button>
+        {/* 抽屉 */}
+        <Drawer isVisible={isDrawerVisible} onClose={handleMask}>
+          <h4>这是一个抽屉</h4>
+        </Drawer>
+      </div>
+      <div className={styles.tagContainer}>
         <Tag closable={true}>这是个标签</Tag>
         <Tag color="red">哈哈哈哈</Tag>
         <Tag color="deepSkyBlue" closable={true}>
@@ -58,6 +61,9 @@ export default function ComponentsTest() {
           width={725}
           barColor="deepskyblue"
         ></Progress>
+      </div>
+      <div className={styles.spinContainer}>
+        <Spin textColor="white"></Spin>
       </div>
     </div>
   );

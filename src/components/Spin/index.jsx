@@ -8,6 +8,7 @@ import "./index.css";
  * @param {hiddenText} bool 是否隐藏加载状态的文本
  * @param {type} string spin的类型，ball|line
  * @param {spinColor} string 加载动画颜色
+ * @param {textColor} string 加载文本颜色
  */
 
 export default function Spin(props) {
@@ -15,24 +16,32 @@ export default function Spin(props) {
   const {
     isLoading = true,
     type,
-    loadingText = "正在加载中",
+    loadingText = "拼命加载中",
     hiddenText = false,
     spinColor = "#06c",
+    textColor = "#1e1e1e",
   } = props;
 
   return isLoading ? (
     <div className="loadingWrap">
-      <div className={classNames('loadInner','ballSpinFadeLoad',spinType[type])} style={{backgroundColor:spinColor}}>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+      <div
+        className={classNames("loadInner", "ballSpinFadeLoad", spinType[type])}
+        style={{ backgroundColor: spinColor }}
+      >
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
-      {!hiddenText&&<p className="loadingText">{loadingText}</p>}
+      {!hiddenText && (
+        <span className="loadingText" style={{ color: textColor }}>
+          {loadingText}
+        </span>
+      )}
     </div>
   ) : null;
 }

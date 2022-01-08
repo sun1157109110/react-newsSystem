@@ -8,16 +8,23 @@
   padding: 30px;
   background-color: #1a1a1a;
 }
+
 .testWrap .btnTest div {
   margin-right: 15px;
 }
-.testWrap .btnTest .btn{
+
+.testWrap .btnTest .btn {
   margin-bottom: 8px;
 }
-.progressContainer{
+.tagContainer{
+  margin-top: 10px;
+}
+
+.progressContainer {
   position: relative;
 }
-.progressContainer::after{
+
+.progressContainer::after {
   content: 'Progress';
   line-height: 30px;
   font-size: 16px;
@@ -25,5 +32,12 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
+}
+
+.spinContainer {
+  position:absolute;
+  margin-top: -25px;
+  width: 140px;
+  height: 120px;
 }
