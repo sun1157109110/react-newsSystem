@@ -38,6 +38,12 @@
 .spinContainer {
   position:absolute;
   margin-top: -25px;
+  margin-left: 80px;
   width: 140px;
   height: 120px;
+}
+.switchContainer{
+  width: 100px;
+  height: 100px;
+  padding: 20px;
 }

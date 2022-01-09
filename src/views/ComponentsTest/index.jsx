@@ -5,6 +5,7 @@ import Drawer from "../../components/Drawer";
 import Tag from "../../components/Tag";
 import Progress from "../../components/Progress";
 import Spin from "../../components/Spin";
+import Switch from "../../components/Switch";
 
 export default function ComponentsTest() {
   const [isDrawerVisible, setIsDrawerVisible] = useState(false);
@@ -64,6 +65,9 @@ export default function ComponentsTest() {
       </div>
       <div className={styles.spinContainer}>
         <Spin textColor="white"></Spin>
+      </div>
+      <div className={styles.switchContainer}>
+        <Switch onText='on'></Switch>
       </div>
     </div>
   );
